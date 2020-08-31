@@ -540,8 +540,7 @@ summary {
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb3-1" title="1"><span class="fu">git</span> config --global user.email <span class="st">&quot;gitcode@magisa.org&quot;</span></a></code></pre></div>
 <p>Note that these lines need to be run one at a time.</p>
 <p>Finally, check to make sure everything looks correct by entering these commands, which will return the options that you have set.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> config --global user.name</a>
-<a class="sourceLine" id="cb4-2" title="2"><span class="fu">git</span> config --global user.email</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><a class="sourceLine" id="cb4-1" title="1"><span class="fu">git</span> config --global --list <span class="kw">|</span> <span class="fu">grep</span> user</a></code></pre></div>
 </div>
 <div id="note-for-windows-users" class="section level3">
 <h3>Note for Windows Users</h3>
@@ -592,7 +591,6 @@ summary {
 <div id="inspecting-your-new-repository" class="section level3">
 <h3>Inspecting your new repository</h3>
 <p>In the <em>Git</em> tab, you’ll note that two files are listed. This is the status pane that shows the current modification status of all of the files in the repository. In this case, the <code>.gitignore</code> file is listed as <em>M</em> for Modified, and <code>genomics-course.Rproj</code> is listed with a <em>? ?</em> to indicate that the file is untracked. This means that git has not stored any versions of this file, and knows nothing about the file. As you make version control decisions in RStudio, these icons will change to reflect the current version status of each of the files.</p>
-<p><strong>Inspect the history.</strong> For now, let’s click on the <em>History</em> button in the Git tab, which will show the log of changes that occurred, and will be identical to what we viewed on GitHub. By clicking on each row of the history, you can see exactly what was added and changed in each of the two commits in this repository.</p>
 <p><strong>Move your old course files into this new directory.</strong> Put your .html files into the main directory and delete the html folder.</p>
 <p><strong>Add, Commit and Push the changes (new files) to the Github repo.</strong> First check the files you want to add. Then click Commit. Write a message to describe the changes (see below on good commit messages.). The Push the changes to the Github repo. Examine the changes in the repo.</p>
 </div>

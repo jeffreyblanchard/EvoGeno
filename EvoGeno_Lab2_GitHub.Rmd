@@ -117,8 +117,7 @@ Note that these lines need to be run one at a time.
 Finally, check to make sure everything looks correct by entering these commands, which will return the options that you have set.
 
 ```{sh git-list, eval=FALSE}
-git config --global user.name
-git config --global user.email
+git config --global --list | grep user
 ```
 
 ### Note for Windows Users
@@ -188,8 +187,6 @@ paste in the link from the Git Repo as noted above.
 ### Inspecting your new repository
 
 In the *Git* tab, you'll note that two files are listed.  This is the status pane that shows the current modification status of all of the files in the repository. In this case, the `.gitignore` file is listed as *M* for Modified, and `genomics-course.Rproj`  is listed with a *? ?* to indicate that the file is untracked.  This means that git has not stored any versions of this file, and knows nothing about the file. As you make version control decisions in RStudio, these icons will change to reflect the current version status of each of the files.
-
-__Inspect the history.__ For now, let's click on the *History* button in the Git tab, which will show the log of changes that occurred, and will be identical to what we viewed on GitHub. By clicking on each row of the history, you can see exactly what was added and changed in each of the two commits in this repository.
 
 __Move your old course files into this new directory.__ Put your .html files into the main directory and delete the html folder.
 
