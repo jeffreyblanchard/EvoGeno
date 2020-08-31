@@ -10,7 +10,7 @@ editor_options:
   chunk_output_type: inline
 ---
 
-Much of the material for this lesson was borrowed from or inspired by Matt Jones' NCEAS Reproducible Research Techniques for Synthesis workshop](https://learning.nceas.ucsb.edu/2020-02-RRCourse/)
+Much of the material for this lesson was borrowed from or inspired by Matt Jones' [NCEAS Reproducible Research Techniques for Synthesis workshop](https://learning.nceas.ucsb.edu/2020-02-RRCourse/)
 
 ## Learning Objectives
 
@@ -97,6 +97,8 @@ To see if you aleady have your name and email options set, use this command from
 ```{sh git-config, eval=FALSE}
 git config --global --list | grep user
 ```
+
+* Note: Most will get an error message at this step unless you have previously set up git
 
 To set the global options, type the following into the command prompt, with your actual name, and press enter:
 
