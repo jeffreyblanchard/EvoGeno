@@ -1,5 +1,5 @@
 ---
-title: "Lab 2 : git and Rstudio projects"
+title: "Lab 2 : git, GitHub and Rstudio projects"
 output:
   html_document:
     toc: true
