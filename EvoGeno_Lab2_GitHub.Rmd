@@ -176,9 +176,9 @@ Once you hit `Create Project, a new RStudio windo will open with all of the file
 You'll note that there is one new file `genomics-course.Rproj`, and three files that we
 created earlier on GitHub (`.gitignore`, `LICENSE`, and `README.md`).
 
-### Syncing your GitHub repository with R Cloud
+### Pulling from and pushing to your GitHub repository with R Cloud
 
-The process of syncing your GitHub repository with R Cloud is similar to using a local installation only when you create a new project select from Git Repo
+The process of pulling from and pushing to your GitHub repository with R Cloud is similar to using a local installation only when you create a new project select from Git Repo
 
 ![](images/New_Project_GitHub.png)
 
@@ -289,12 +289,12 @@ If you create this two files paper.Rmd and references.bib you will have a workin
 paper.Rmd
 
 ```
-
 ---
 title: 'My Title'
 author: "Me me me me!"
+date: Aug 31, 2020
 output: html_document
-bibliography: data/references.bib
+bibliography: references.bib
 ---
 
 Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
