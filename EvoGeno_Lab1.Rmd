@@ -350,6 +350,6 @@ Lab Reports will be made using the RMarkdown notation. To make a Lab Report
 * Modify the default file so that the exercise number is preceeded by ###.  * Cut and paste your answer for the exercise from your .R file into this .Rmd file. Make sure your R code is within the code chunks.
 * When you are done Knit the file to generate a .html file (this is saved into the same folder as the .Rmd file).  
 
-## What to turn in?
+### What to turn in?
 
-For today's lab upload both your .R and .html (not your .Rmd) files with you code from the exercises. Be sure to include comments to mark each section.
+For today's lab upload both your .R and .html (not your .Rmd) files with you code from the exercises.   Be sure to include comments to mark each section.

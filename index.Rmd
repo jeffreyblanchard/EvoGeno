@@ -4,7 +4,7 @@ output:
   pdf_document: default
 ---
 
-This is rendering hmtl files from the course repository  (https://github.com/jeffreyblanchard/evogeno) for Evolutionary Genomics & Bioinformatics taught at the University of Massachusetts Amherst in Fall 2020 by Prof. Jeffrey Blanchard
+This is a rendering of hmtl files from the course repository  (https://github.com/jeffreyblanchard/evogeno) for Evolutionary Genomics & Bioinformatics taught at the University of Massachusetts Amherst in Fall 2020 by Prof. Jeffrey Blanchard
 
 ![](images/HF_portrait3.png)
 
