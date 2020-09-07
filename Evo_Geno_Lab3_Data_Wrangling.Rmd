@@ -1,0 +1,96 @@
+---
+title: "Lab 3 : Data Wrangling"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: united
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+## Learning objectives
+
+* Tidyverse
+* R data structures
+* Data wrangling
+
+## Overview
+
+### tidyverse 
+In R and most programming languages there are many ways to do the same thing. In the past I have taught R and Python using the core syntax. A newer approach to learning to program in R is embodied by the [tidyverse](https://www.tidyverse.org/). The tidyverse packages are designed flatten the learning curve for data transformation, analysis and graphing. This approach is conducive to course like ours.
+
+#### Import
+
+* `readr` - readr provides a fast and friendly way to read rectangular data (like csv, tsv, and fwf). It is designed to flexibly parse many types of data found in the wild.
+
+#### Data Wrangling
+
+* `dplyr` - dplyr provides a grammar of data manipulation, providing a consistent set of verbs that solve the most common data manipulation challenges. 
+
+* `tidyr` - tidyr provides a set of functions that help you get to tidy data. Tidy data is data with a consistent form: in brief, every variable goes in a column, and every column is a variable. 
+
+* `stringr` - stringr provides a cohesive set of functions designed to make working with strings as easy as possible. 
+
+#### Graphing
+
+* `ggplot2` - ggplot2 is a system for creating graphics, based on The Grammar of Graphics. 
+
+#### Programing
+
+* `purrr` - purrr enhances R’s functional programming (FP) toolkit by providing a complete and consistent set of tools for working with functions and vectors. Once you master the basic concepts, purrr allows you to replace many for loops with code that is easier to write and more expressive.
+
+The free online book [R for Data Science](https://r4ds.had.co.nz/) is a one place offers a introduction to the `tidyverse` and is great source of alternate examples, explanations and workflows for this course
+
+### Data Carpentry
+
+"Data Carpentry develops and teaches workshops on the fundamental data skills needed to conduct research. Our mission is to provide researchers high-quality, domain-specific training covering the full lifecycle of data-driven research... Our initial target audience is learners who have little to no prior computational experience. We create a friendly environment for learning to empower researchers and enable data driven discovery." from the [Data Carpentry website](https://datacarpentry.org/)
+
+For our course we will use materials from 
+
+* [Data Analysis and Visualization in R for Ecologists](https://datacarpentry.org/R-ecology-lesson/index.html)
+* [Data Analysis and Visualization in Python for Ecologists](https://datacarpentry.org/python-ecology-lesson/)
+* [Genomics Workshop](https://datacarpentry.org/genomics-workshop/)
+
+## On the Computer
+
+Before we start working with tidyverse, there are a few loose ends to tidy up.
+
+On your computer or on R Cloud use the same R project file as last week (we will use this the rest of the semester)
+
+### RStudio preferences and keyboard shortcuts
+
+One particular useful RStudio keyboard shortcuts.
+
+To insert a code chunk use ctr + alt + i 
+
+More can be found in the Menu by clicking on Tools -> Keyboard ShortCuts Help
+
+I don't like to my .Rmd file cluttered by graphs R code outputs outputs. The default inline setting can be changed by clicking on the wheel (next to Knit) and selecting Chunk output in Console. 
+
+Here is a collection of [RStudio cheatsheets](https://rstudio.com/resources/cheatsheets/)
+
+### Exercises
+
+You will need to install the tidyverse suite of packages. You can do this by going the menu bar `Tools` > `Install Package` and searching for `tidyverse`. You only need to do this once. However, whenever you use the packages and in your report files you will need to load the `tidyverse` library
+
+Go through the Data Carpentry tutorials on [Starting with the Data](https://datacarpentry.org/R-ecology-lesson/02-starting-with-data.html) and [Manipulating Data](https://datacarpentry.org/R-ecology-lesson/03-dplyr.html). Make separate reports for each tutorial named Lab3A and Lab3B. Put the example code and challenge questions into each report. Update your index.Rmd file to include links to Lab3A and Lab3B. Push the files to your GitHub repo and make sure they are visible on your Github web page.
+
+
+```{r, eval=FALSE}
+library(tidyverse)
+```
+
+For this tutorial you will need to download a file from Figshare, a site for sharing scientific data.  You can do this from within Rstudio using the following lines which will put the file into the data directory you created above. You need to only run this once so I recommend running and then in your lab report setting eval = FALSE in the r code chunk header, so that it is not run when you knit
+
+```{r, eval=FALSE}
+ download.file(url="https://ndownloader.figshare.com/files/2292169",
+              destfile = "data/portal_data_joined.csv")
+```
+
+In the Data Carpentries tutorial be sure to change the path to the data file from data_raw to data
+
+```{r, eval=FALSE}
+surveys <- read_csv("data/portal_data_joined.csv")
+```
