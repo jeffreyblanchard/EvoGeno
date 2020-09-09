@@ -10,6 +10,11 @@ editor_options:
   chunk_output_type: console
 ---
 
+```{r}
+library(tidyverse)
+```
+
+
 ## Learning objectives
 
 * Tidyverse
@@ -84,9 +89,9 @@ library(tidyverse)
 
 For this tutorial you will need to download a file from Figshare, a site for sharing scientific data.  You can do this from within Rstudio using the following lines which will put the file into the data directory you created above. You need to only run this once so I recommend running and then in your lab report setting eval = FALSE in the r code chunk header, so that it is not run when you knit
 
-```{r, eval=FALSE}
- download.file(url="https://ndownloader.figshare.com/files/2292169",
-              destfile = "data/portal_data_joined.csv")
+```{r}
+ download.file(url="https://ndownloader.figshare.com/files/2292169", 
+               destfile = "data3/portal_data_joined.csv")
 ```
 
 In the Data Carpentries tutorial be sure to change the path to the data file from data_raw to data
@@ -94,3 +99,4 @@ In the Data Carpentries tutorial be sure to change the path to the data file fro
 ```{r, eval=FALSE}
 surveys <- read_csv("data/portal_data_joined.csv")
 ```
+
