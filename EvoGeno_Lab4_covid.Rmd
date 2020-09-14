@@ -89,7 +89,7 @@ library(DT)
 datatable(report_03_11_2020)
 ```
 
-### Key board shortcut for `%>%
+### Key board shortcut for %>%
 
 Selecting `shift` `ctrl` `m` at the same time is a keyboard shortcut for `%>%`
 
