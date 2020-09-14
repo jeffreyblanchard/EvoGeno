@@ -109,7 +109,7 @@ Use the DT package for showing the data tables where appropriate.
 
 ## Introduction to R Graphics
 
-R provides comprehensive graphics utilities for visualizing and exploring scientific data. To date we have been making a few plots using the R Base Graphics. In addition, several more recent graphics environments extend these utilities. These include the `grid`, `lattice` and `ggplot2` packages. The ggplot2 envirnoment is by far the most popular and used for many R packages and in many scientific publications. 
+R provides comprehensive graphics utilities for visualizing and exploring scientific data. To date we have been making a few plots using the R Base Graphics. In addition, several more recent graphics environments extend these utilities. These include the `grid`, `lattice` and `ggplot2` packages. The `ggplot2` environment is by far the most popular and used for many R packages and in many scientific publications. 
 
 ### Grammar of Graphics
 
