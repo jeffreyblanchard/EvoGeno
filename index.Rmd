@@ -18,3 +18,4 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 2 : [git, GitHub and Rstudio project](EvoGeno_Lab2_GitHub.html)
 * Lab 3 : [Data Wrangling](EvoGeno_Lab3_Data_Wrangling.html)
 * Lab 4 : [Data wrangling and graphing COVID-19 reporting data (Part 1)](EvoGeno_Lab4_covid.html)
+* Lab 5 : [Data wrangling and graphing COVID-19 reporting data (Part 2)](EvoGeno_Lab5_covid.html)

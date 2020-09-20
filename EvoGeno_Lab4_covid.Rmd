@@ -99,7 +99,7 @@ Today's exercises involve the application of what you learned in the Data Carpen
 
 Use the DT package for showing the data tables where appropriate.
 
-1. The format of the daily reports has changed over time. What are the differences between 3/13/2020, the Friday before spring break 2020 and yesterday 6 months later on 9/13/2020? Load the files into R and use `str()` and `View()` (or in the top right corner click on Environment and then the data frame.). Note the in the more recent dates they have changed the column headers so that it is no longer necessary to rename `Province_State` and `Country_Region`.
+1. The format of the daily reports has changed over time. What are the differences between 3/12/2020, the Friday before spring break 2020 and yesterday 6 months later on 9/12/2020? Load the files into R and use `str()` and `View()` (or in the top right corner click on Environment and then the data frame.). Note the in the more recent dates they have changed the column headers so that it is no longer necessary to rename `Province_State` and `Country_Region`.
 
 2. Many countries have multiple entries representing different regions (e.g. counties and states). To get the counts for a country we need to summarise the data.  Use `group_by()` and `summarize()` to make a data frame (tibble) with total counts for each country.
 
@@ -145,6 +145,11 @@ Here are a few different resources for `ggplot`.
 5. Make plots using `geom_point()` of the 10 countries with the confirmed cases and deaths (two separate graphs) on 3/12/2020 and 9/12/2020.
 
 6. Make using `geom_bar` of the 10 states with the most confirmed cases and deaths (two separate graphs) on 3/12/2020 and 9/12/2020.
+
+```{r, eval=FALSE}
+  ggplot(aes(x = Deaths,  y = Country_Region)) + 
+    geom_bar(stat = 'identity') 
+```
 
 ### What to upload
 
