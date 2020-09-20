@@ -1,5 +1,5 @@
 ---
-title: "Human Genome Analysis Lab 9 : Working with COVID-19 reporting data  "
+title: "Lab 5 : Data wrangling and graphing COVID-19 reporting data (Part 2)"
 output:
   html_document:
     toc: true
