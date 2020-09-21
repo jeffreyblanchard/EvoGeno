@@ -12,11 +12,6 @@ editor_options:
 
 *I recognize, and fully understand, that this data maybe emotionally difficult to work. My intention is to make these lab relevant, allowing you to gather your own insights directly from new visualizations of the data. Please let me know if you would rather not work with the data.*
 
-
-USE 3/12/2020 and 9/12/2020 to show merge and graphing in examples
-State = Reporting in 9/12 data
-
-
 ## Learning Objectives
 
 * Understanding the sources of SARS-CoV-2 incidence reports
