@@ -146,12 +146,9 @@ Another way to present a graph without the code is adding echo = FALSE within th
 
 ## Interactive graphs
 
-
-
 With plotly/ggplotly (https://plot.ly/ggplot2/) you can make interactive graphs in your lab report.
 
 There are two common formats used in graphing that you may come across in examples. One very common format that we have not used to date is putting your graph into a variable and then plotting the variable. They both work perfectly fine.
-
 
 ```{r, , eval=FALSE, message=FALSE}
 # Version 2
@@ -221,6 +218,24 @@ p <- ggplot(data_time, aes(x = Date,  y = Confirmed, color = Country_Region)) +
 # Some people needed to use this line instead
 # animate(p,renderer = gifski_renderer(), end_pause = 15)
 animate(p, end_pause = 15)
+```
+
+To change the output to a gif file that can be used in slide presentations or otherwise
+
+```{r, warnings=FALSE, message=FALSE}
+data_time <- time_series_long_joined %>% 
+    group_by(Country_Region,Date) %>% 
+    summarise_at(c("Confirmed", "Deaths"), sum) %>% 
+    filter (Country_Region %in% c("China","Korea, South","Japan","Italy","US")) 
+p <- ggplot(data_time, aes(x = Date,  y = Confirmed, color = Country_Region)) + 
+      geom_point() +
+      geom_line() +
+      ggtitle("Confirmed COVID-19 Cases") +
+      geom_point(aes(group = seq_along(Date))) +
+      transition_reveal(Date) 
+# Some people needed to use this line instead
+# animate(p,renderer = gifski_renderer(), end_pause = 15)
+anim_save("deaths_5_countries.gif", p)
 ```
 
 ## Exercises
