@@ -457,12 +457,12 @@ summary {
 <p><a href="https://rstudio-education.github.io/tidyverse-cookbook/">Tidyverse Cookbook</a> has many practical solutions to problems. We will go over different ways to <a href="https://rstudio-education.github.io/tidyverse-cookbook/transform-tables.html#joins">join tables</a>.</p>
 <p>Let’s start by loading <code>tidyverse</code></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(tidyverse)</a></code></pre></div>
-<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
+<pre><code>## ── Attaching packages ────────────────────────────────────────────────────────────────────────── tidyverse 1.3.0 ──</code></pre>
 <pre><code>## ✓ ggplot2 3.3.2     ✓ purrr   0.3.4
 ## ✓ tibble  3.0.3     ✓ dplyr   1.0.2
 ## ✓ tidyr   1.1.2     ✓ stringr 1.4.0
 ## ✓ readr   1.3.1     ✓ forcats 0.5.0</code></pre>
-<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────── tidyverse_conflicts() ──
+<pre><code>## ── Conflicts ───────────────────────────────────────────────────────────────────────────── tidyverse_conflicts() ──
 ## x dplyr::filter() masks stats::filter()
 ## x dplyr::lag()    masks stats::lag()</code></pre>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" title="1">Confirmed_State_<span class="dv">3</span>_<span class="dv">13</span> &lt;-<span class="st">   </span><span class="kw">read_csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/03-13-2020.csv&quot;</span>)) <span class="op">%&gt;%</span></a>
@@ -892,8 +892,15 @@ summary {
 <li><p>Plot US deaths/confirmed cases per day.</p></li>
 <li><p>Make a single graph with from the times series data with the 10 countries with the hightest death total.</p></li>
 <li><p>Using Facet_Wraps make a graph from the times series data with the 10 countries with the hightest death total. Format the table to look nice in the report by changing the number of rows in your graph and/or adjusting the height in the R code chunk header.</p></li>
-<li><p>Using Facet_Wraps make a graph from the times series data for confirmed cases for all US states and territories. (Hint: Instead of the global time series use the US time series data in the same folder <code>time_series_covid19_deaths_US.csv</code> and <code>time_series_covid19_confirmed_US</code>) Format the table to look nice in the report by changing the number of rows in your graph and/or adjusting the height in the R code chunk header.</p></li>
-<li><p>Apply a theme other than the one used in the Data Carpentries tutorial to the graph in Ex8.</p></li>
+<li><p>Using Facet_Wraps make a graph from the times series data for confirmed cases for all US states and territories. (Hint: Instead of the global time series use the US time series data in the same folder <code>time_series_covid19_deaths_US.csv</code> and <code>time_series_covid19_confirmed_US.csv</code>) Format the table to look nice in the report by changing the number of rows in your graph and/or adjusting the height in the R code chunk header. Notice that there are many more fields in the US report than the global report and that the US Deaths table has an extra column for <code>Population</code>. Here is some example code:</p></li>
+</ol>
+<div class="sourceCode" id="cb62"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb62-1" title="1">time_series_deaths_long &lt;-<span class="st"> </span><span class="kw">read_csv</span>(<span class="kw">url</span>(<span class="st">&quot;https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv&quot;</span>)) <span class="op">%&gt;%</span></a>
+<a class="sourceLine" id="cb62-2" title="2"><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Long =</span> <span class="st">&quot;Long_&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-3" title="3"><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="kw">c</span>(UID, iso2, iso3, code3, FIPS)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb62-4" title="4"><span class="st">  </span><span class="kw">pivot_longer</span>(<span class="op">-</span><span class="kw">c</span>(Admin2, Province_State, Country_Region, Lat, Long, Combined_Key, Population),</a>
+<a class="sourceLine" id="cb62-5" title="5">                             <span class="dt">names_to =</span> <span class="st">&quot;Date&quot;</span>, <span class="dt">values_to =</span> <span class="st">&quot;Deaths&quot;</span>) </a></code></pre></div>
+<ol start="10" style="list-style-type: decimal">
+<li>Apply a theme other than the one used in the Data Carpentries tutorial to the graph in Ex8.</li>
 </ol>
 </div>
 
