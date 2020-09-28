@@ -243,7 +243,7 @@ anim_save("deaths_5_countries.gif", p)
 
 ## Exercises
 
-Wednesday labs are supplemental. The only requirement for students in 497 is that you reproduce the above code on your computer and add it to your GitHub site. Students in 697 need to complete the following challanges.
+Wednesday labs are supplemental. The only requirement for students in 597 is that you reproduce the above code on your computer and add it to your GitHub site. Students in 697 need to complete the following challanges.
 
 ### Challenge 1
 
