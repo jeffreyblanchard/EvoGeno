@@ -167,14 +167,17 @@ ggplotly(
 
 ```{r, message=FALSE}
 library(plotly)
+# Subset the time series data to include US deaths
 US_deaths <- time_series_long_joined %>% 
     group_by(Country_Region,Date) %>% 
     summarise_at(c("Confirmed", "Deaths"), sum) %>% 
     filter (Country_Region == "US")
+# Collect the layers for agraph of the US time series data for covid deaths
  p <- ggplot(data = US_deaths, aes(x = Date,  y = Deaths)) + 
         geom_point() +
         geom_line() +
         ggtitle("US COVID-19 Deaths")
+# Plot the graph using ggplotly
 ggplotly(p)
 ```
 
