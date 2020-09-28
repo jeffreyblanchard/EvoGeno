@@ -1,5 +1,5 @@
 ---
-title: "Lab 6 : Data Maps, Interactive Graphs and Animations from the COVID-19 reporting data"
+title: "Lab 6 : Data Maps and Interactive Graphs from the COVID-19 reporting data"
 output:
   html_document:
     toc: true
@@ -241,4 +241,4 @@ ggplotly(
 
 4. Make an interactive plot using a state of your chosing using a theme different from used in the above exammples.
 
-5. Create a report with static maps and interactive graphs that is meant to be read by others (e.g. your friends and family). Hide warnings, messages and even the code you used so that it is readable. Included references. Link to the Lab 10 report from your Github site. Submit the link to Moodle. animations that is meant to be read by others (e.g. your friends and family). Hide warnings, messages and even the code you used so that it is readable. Included references. Link to the Lab 6 report from your Github site. Submit the link to Moodle.
+5. Create a report with static maps and interactive graphs that is meant to be read by others (e.g. your friends and family). Hide warnings, messages and even the code you used so that it is readable. Included references. Link to the Lab 6 report from your Github site. Submit the link to Moodle. Hide warnings, messages and even the code you used so that it is readable. Included references. Link to the Lab 6 report from your Github site. Submit the link to Moodle.
