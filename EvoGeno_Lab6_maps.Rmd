@@ -273,6 +273,12 @@ ggplot(data = world, mapping = aes(x = long, y = lat, text = region, group = gro
 
 1. For the above graph "COVID-19 Deaths" summarize the counts for each Country on the graph and update the graph to 9/26/2020. You are doing some real life data wrangling. Data is not always in the form that you expected, so it is important to check what the results of each step are. You can summarize the counts for each country and find the median Lat and Long as a way of summarize the Lat and Long from each state. However, the US and several other countries do not have counts.  This is because for some US (and other countries) the Lat and Long are NA. One strategies is to simply remove this data (which is fine for this class).
 
+```{r, eval=FALSE}
+  filter(Lat != "NA")
+  filter(Long != "NA") 
+```
+
+
 Using the mean or median(Lat) and (Long) is still not perfect. Some countries are still centered in the ocean. This is ok for ex1. You can use ggplotly to help trouble shoot by putting the Country_Region as text in the hover box
 
 ```{r, eval=FALSE}
