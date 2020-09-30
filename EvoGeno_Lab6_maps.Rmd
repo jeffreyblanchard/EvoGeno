@@ -265,7 +265,7 @@ ggplot(data = world, mapping = aes(x = long, y = lat, text = region, group = gro
   geom_polygon(data = country_join, aes(fill = Deaths), color = "black") +
   scale_fill_gradientn(colours = 
                          wes_palette("Zissou1", 100, type = "continuous")) +
-  labs(title = "COVID-19 Deaths'")
+  labs(title = "COVID-19 Deaths")
 )
 ```
 
