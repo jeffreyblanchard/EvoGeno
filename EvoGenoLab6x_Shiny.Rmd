@@ -1,5 +1,5 @@
 ---
-title: "Human Genome Analysis Lab 12 : Redux - R Shiny apps using the COVID-19 reporting data"
+title: "Lab 6x : R Shiny apps using the COVID-19 reporting data"
 output:
   html_document:
     toc: true
@@ -67,8 +67,7 @@ Notice the call to load the libaries (in this case __shiny__) comes before the c
 
 ## Shiny examples using the COVID-19 Reporting data
 
-In the [class GitHub repository](https://github.com/jeffreyblanchard/EvoGeno/ShinyApps) there is are example of shiny apps using the COV-19 `Lab6x_example_5countries_app.R` and `Lab6x_example_map2_app.R` which you can down load to your computer. I have also put these examples on the RStudio Shiny server [Lab6x_example_5countries](https://jeffreyblanchard.shinyapps.io/example5countries/) and [Lab6x_example_map2](https://jeffreyblanchard.shinyapps.io/example5countries/). The map example may take a while to load depending on your connections.
-
+In the [class GitHub repository](https://github.com/jeffreyblanchard/EvoGeno/) there is folder ShinyApps with examples of shiny apps using the COV-19 `Lab6x_example_5countries_app.R` and `Lab6x_example_map2_app.R` which you can down load to your computer. I have also put these examples on the RStudio Shiny server [Lab6x_example_5countries](https://jeffreyblanchard.shinyapps.io/example5countries/) and [Lab6x_example_map2](https://jeffreyblanchard.shinyapps.io/example5countries/). The map example may take a while to load depending on your connections.
 
 ## Exercises
 
