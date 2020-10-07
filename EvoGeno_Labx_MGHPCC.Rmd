@@ -1,0 +1,54 @@
+---
+title: "University of Massachusetts Green High Performance Computing Cluster (MGHPCC) registration and login"
+output:
+  html_document:
+    toc: true
+    toc_depth : 4
+    theme: united
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+### Why HPC
+
+Early steps in genome data processing, particularly assembly and read mapping are computational intensive. Even with a modest data set of a few dozen samples it is difficult/impossible to do on your lap. And who wants to bog down there or another computer for long periods of time (only to run out of memory). There are several options available for using high performance computers at minimal or no cost.
+
+### MGHPCC
+
+If you are taking the graduate version (697) of this class please register for a MGPHCC account -  https://www.umassrc.org/hpc/index.php The MGHPCC is an intercollegiate high-performance computing facility located in Holyoke, Massachusetts. MGHPCC is for research computing, only Principal Investigators (PIs) as defined by the local school and their staff or authorized collaborators may receive accounts on MGHPCC.  PI authorization is required for all new account requests.  For more details see - http://wiki.umassrc.org/wiki/index.php/Main_Page.  Do not list me as the PI unless you are working in research lab.
+
+In addition to accessing the cluster via the command line. Open OnDemand provides a web interface to a number of cluster resources including Rstudio and Jupyter Notebook, and Gnome X11 desktop.  Current users of the cluster can log in to this web interface at https://www.umassrc.org:444 from your local campus network or VPN using your cluster username and password. *Note you may need to set up a VPN for remote access. - https://www.umass.edu/it/support/vpn/howinstallanduseglobalprotectvpnclient 
+
+See the [MGHPCC login](https://www.umassrc.org/wiki/index.php/Connecting_to_the_Cluster) for instructions on how to log in. On Linux and OSX computers SSH is available through the __Terminal__ application that is already installed. For Windows users the most popular option is to download [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/).
+
+To transfer data see instructions on [MGHPCC data transfer](https://www.umassrc.org/wiki/index.php/Transferring_Data). Most of what we do in this class can be run using interactive mode.  
+
+### Other options
+
+These others options can work as well depending on your needs and 
+
+#### Using the lessons with Amazon Web Services (AWS)
+
+The Data Carpentry Genomic lessons are designed to be run on pre-imaged Amazon Web Services (AWS) instances. With the exception of a spreadsheet program, all of the software and data used in their genomic workshop are hosted on an Amazon Machine Image (AMI). To work on this lessons independently outside of a Data Carpentry workshop, you will need to start your own AMI instance. Follow [these instructions](https://datacarpentry.org/genomics-workshop/AMI-setup/) on creating an Amazon instance. Use the AMI __ami-0985860a69ae4cb3d__ (Data Carpentry Genomics Beta 2.0 (April 2019)) listed on the Community AMIs page. Please note that you must set your location as __N. Virginia__ in order to access this community AMI. You can change your location in the upper right corner of the main AWS menu bar. The cost of using this AMI for a few days, with the t2.medium instance type is very low (about USD $1.50 per user, per day).
+
+#### Galaxy
+
+[Galaxy](https://galaxyproject.org/) an open, web-based platform for accessible, reproducible, and transparent computational research. I have used it in the past in teaching this course and has many strengths. It has all the tools needed for this tutorial and for some people will be valuable to learn for their research. We do not use it currently because the course is focused on learning R and associated packages rather than learning a particularly platform. We can't do everything in one semester!
+
+#### Jet Stream
+
+[https://jetstream-cloud.org/](Jetstream) is part of XSEDE, a collection of integrated advanced digital resources and services funded by NSF. You need to be eligible for an XSEDE allocation to use Jetstream, which means must be based at a U.S. institution. And although XSEDE is NSF-funded, "projects need not be supported by NSF grants" to receive an allocation. Jetstream enables researchers to launch, use, and shutdown their own Galaxy servers that have been pre-configured similar to the Main Galaxy server. We may use Jetstream in the future for the class as they now allow faculty to submit an application for a course allocation. 
+
+#### National Center for Genome Analysis Support (NCGAS)
+
+The mission of the [National Center for Genome Analysis Support](https://ncgas.org/) is to enable the biological research community of the US to analyze, understand, and make use of the vast amount of genomic information now available. NCGAS focuses particularly on transcriptome- and genome-level assembly, phylogenetics, metagenomics/transcriptomics, and community genomics. My lab has accounts at NCGAS that we have used for aspects of microbiome assembly, annotation and analysis. 
+
+#### Setting it up on a local computer
+
+I don't recommend setting up your computer to do these analyses. However, if your lab has a Unix computer with more CPUs than it work fine. We were able to run this tutorial on our lab computer.
+
+
+
+
+

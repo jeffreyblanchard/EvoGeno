@@ -9,4 +9,3 @@ bibliography: data/references.bib
 Application written in R [@RCoreTeam] using the Shiny framework [@Chang2015].
 
 # REFERENCES
-```

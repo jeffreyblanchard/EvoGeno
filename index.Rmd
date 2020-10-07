@@ -22,3 +22,7 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 5x : [Interactive Graphs and Animations from the COVID-19 reporting data](EvoGeno_Lab5x_interactive_graphs.html)
 * Lab 6 : [Data Maps, Interactive Graphs and Animations from the COVID-19 reporting data](EvoGeno_Lab6_maps.html)
 * Lab 6x : [R Shiny apps using the COVID-19 reporting data](EvoGeno_Lab6x_Shiny.html)
+
+### Unix Labs
+* [University of Massachusetts Green High Performance Computing Cluster (MGHPCC) registration and login](EvoGeno_Labx_MGHPCC.html)
+* Lab 7x : [Working on the Command Line](EvoGeno_Lab7x_cmd.html)
