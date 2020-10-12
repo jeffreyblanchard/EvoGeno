@@ -33,7 +33,7 @@ You can install Bioconductor by typing in the R console
 ```{r eval = FALSE}
 if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install(version = "3.10")
+BiocManager::install(version = "3.11")
 ```
 
 Individual packages that are not part of the BioConductor core can be installed using
