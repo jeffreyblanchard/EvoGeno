@@ -27,3 +27,4 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 ### Unix Labs
 * [University of Massachusetts Green High Performance Computing Cluster (MGHPCC) registration and login](EvoGeno_Labx_MGHPCC.html)
 * Lab 7x : [Working on the Command Line](EvoGeno_Lab7x_cmd.html)
+* lab 8x : [NCBI databases](EvoGeno_Lab8x_blast_msa.html)

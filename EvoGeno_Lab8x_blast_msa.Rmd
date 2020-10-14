@@ -1,0 +1,201 @@
+---
+title: "NCBI databases"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: united
+    highlight: tango
+---
+
+## BLAST
+
+The <a href="http://www.ncbi.nlm.nih.gov/books/NBK21097/" target="_blank"> NCBI Tutorial</a> contains an introduction to the basics of BLAST, covering the general approach, the alignment algorithm, how to quantify the comparison of sequences,the insertion of gaps, the statistical aspect of searching and the databases involved.  Key to BLAST's success, both as an algorithm and as a program, has been its use of statistical methods to simultaneously accelerate its search speed and to increase its search sensitivity. In the late 1980's and early 1990's, Altschul and Karlin showed that the significance of pairwise sequence alignments could be rapidly determined or in essence, "predicted" using what is called an Extreme Value Distribution. By using this special kind of Poisson distribution and the probabilities that could be calculated from it, Altschul and co-workers demonstrated that it was possible to rapidly identify, assess and extend local sequence blocks or k-tuples more rapidly and more accurately than FASTA or other competing programs.  In class we will go over the tutorial and the <a href="http://www.ncbi.nlm.nih.gov/books/NBK62051/" target="_blank">Glossary of BLAST TERMS</a>
+
+### Similarity vs. Identity
+
+When protein sequences are aligned, the amino acids at a particular position in the aligment are often said to be identical if they are identical and similar if the amino acids have similar biochemical properties.  For example in the BLAST results below, the V to I comparison is marked by a "+".  If you look at the above chart on the biochemical characteristics of proteins both V (valine) and I (Isolecine) are nonpolar neutral amino acids.  Thus, they often can be exchanged in a protein sequence without affecting the protein function.  Protein sequences are often compared based on the % identity which is the fraction of amino acids that are identical in an alignment and the % similarity which is the fraction of similar amino acids.  In the BLAST results the % similarity is the "Positives".
+
+<pre>
+  Score =  293 bits (751),  Expect = 7e-78, Method: Composition-based stats.
+  Identities = 141/202 (69%), Positives = 169/202 (83%), Gaps = 1/202 (0%)
+    
+    Query  208  QLISNEPSEKMNHVQLIWLYSIMLSATAIKLVLWIYCKSSRNHIVRAYAKDHHFDVVTNV  267
+                QL+ N+  EKM   QLIWLYSIMLSAT +KL L+IYC+SS N IV+AYAKDH+FDVVTNV
+    Sbjct  1    QLVENKAGEKMTPEQLIWLYSIMLSATVVKLALYIYCRSSGNSIVQAYAKDHYFDVVTNV  60
+    
+    Query  268  LGLVAAVLANAFYWWLDPTGAILLAIYTIVNWSGTVMENAVSLIGQSAPPEVLQKLTYLV  327
+                +GLVAAVL + F+WW+DP GA+LLA+YTIVNWSGTV ENAV+L+GQ AP ++LQKLTYL 
+    Sbjct  61   VGLVAAVLGDKFFWWIDPVGAVLLAVYTIVNWSGTVYENAVTLVGQCAPSDMLQKLTYLA  120
+    
+    Query  328  MRQGGDNIKHVDTVRAYTFGVLYFVEVDIELPEDLPLKEAHAIGESLQIKLEELPEVERA  387
+                M+     ++ VDTVRAY+FG LYFVEVDIEL ED+ L EAH+IGESLQ K+E+LPEVERA
+    Sbjct  121  MKH-DPRVRRVDTVRAYSFGALYFVEVDIELSEDMRLGEAHSIGESLQDKIEKLPEVERA  179
+    
+    Query  388  FVHLDFECHHKPEHSVLSTIPN  409
+                FVH+DFE  HKPEH V S +P+
+    Sbjct  180  FVHVDFESTHKPEHRVRSRLPS  201
+</pre>
+
+
+The BLAST output lists similar sequences ordered by their E (expect) value.  The E value of a match represents the chance that the match occurs in a randomly generated database of the same size and composition.  The closer to 0 the E value is, the less likely it occurred by chance.  Thus the lower the E value the better the match.
+
+## Setting up and searching your own local DNA and Protein sequence database.
+
+The National Center for Biotechnology Information (NCBI) provides tools and sequence files to allow you to create your own sequence database and search it using  BLAST.  A <a href="http://www.ncbi.nlm.nih.gov/books/NBK21097/" target="_blank="> BLAST Overview and short tutorial</a> is available at NCBI's Education Site.  
+You should be familiar with the material on this site.  
+
+There are several reasons to create a local sequence database as we will do in this class rather than use the web site.
+
+1. It is easier to interpret the results. 
+
+2. You can run multiple searches easily.
+* search all proteins from a whole genome against GenBank
+* search all proteins from a whole genome against another.
+
+3. You can incorporate "unpublished" data that is not in GenBank into your search.
+* using your own unpublished genomes
+* draft genomes available at JGI or Sanger institute that are not in GenBank yet.
+
+4. You can make a sequence search part of a larger program.
+
+5. You can create a specialized database for testing specific hypotheses.
+
+## Introduction to Ontologies
+
+From <a href="http://en.wikipedia.org/wiki/Ontology">Wikipedia</a> "In philosophy, ontology is the most fundamental branch of metaphysics. It studies being or existence and their basic categories and relationships, to determine what entities and what types of entities exist. Ontology thus has strong implications for conceptions of reality."  In computer science the term ontology has a more specific meaning.  "...an ontology is a data model that represents a domain and is used to reason about the objects in that domain and the relations between them.  Ontologies are used in artificial intelligence, the semantic web, and software engineering as a form of knowledge representation about the world or some part of it. Ontologies generally consist of:
+
+* Individuals: the basic or "ground level" objects.
+* Classes: sets, collections, or types of objects.
+* Attributes: properties, features, characteristics, or parameters that objects can have and share.
+* Relations: ways that objects can be related to one another." - <a href="http://en.wikipedia.org/wiki/Ontology_%28computer_science%29"> Wikipedia</a>
+
+### Ontologies in Bioinformatics
+
+Ontologies in molecular biology are derived from the metabolic pathways database efforts which first attempted to capture the metabolic "relations" between genes (and gene products) and to group them into "classes" reflecting metabolic pathways. Metabolic pathway databases have proven extremely useful in the annotation and interpretation of genomic data due to our solid understanding of metabolism and the evolutionary conservation of pathways.  As an example, the metabolic pathway analysis system WIT (“What is there?”) at Argonne National Labs was used to help annotate the complete genome sequence of the methanogenic archaeon, ''Methanococcus jannaschii''.  The genes from Methanococcus were mapped to a generic reference metabolic pathway, and genes missing from the pathway were searched for again in the sequence files to determine whether they were incorrectly predicted or misannotated.  If the pathway is still incomplete, it suggests that this particular pathway and metabolic phenotype is not valid for the organism.  Thus, the process of conceptual model building (e.g a metabolic pathway model) and testing with genomic data has proven to be useful for predicting phenotypes of many organisms, although "What is there?" is no longer there (it went commercial and then died).  <a href="http://biocyc.org/"> BioCyc</a> and <a href="https://www.genome.jp/kegg/"> KEGG</a> are examples of databases with metabolic roots that have grown into more complete biological information sources in part because of dedicated groups of developers and curators that keep the databases up to date.
+
+### The Gene Ontology Project
+The Gene Ontology project originated by a need to map gene names and functions across the major model eukaryotic organismal databases for <a href="http://www.yeastgenome.org/"> yeast</a>, <a href="http://flybase.org/"> fly</a> and <a href="http://www.informatics.jax.org/">mouse</a>, but has been extended to other organisms.  The Gene Ontology is composed of three structured heirarchical vocabularies:
+
+* Cellular Component Ontology:  Subcellular structures, locations, and macromolecular complexes; examples include nucleus, telomere, and origin recognition complex.
+* Biological Process Ontology:  Broad biological goals, such as mitosis or purine metabolism, that are accomplished by ordered assemblies of molecular functions.
+* Molecular Function Ontology:  the tasks performed by individual gene products; examples are carbohydrate binding and ATPase activity.
+
+Below is a part of the Gene Ontology for the rbcL protein showing the three heirarchical vocabularies
+
+<img src="images/RbcL.png" width="500" alt="RbcL" /> 
+
+Below is an example of how a gene product (protein) is associated with the Gene Ontology terms in the Arabidopsis database (TAIR).
+
+<img src="images/AnnotationDetail.png" width="500" alt="Annotation detail" /> 
+
+The GO curators attached genes from a particular species to the appropriate locations in the ontology using several sources of data, including manually sifting through the published literature as well as sequence similarity to a gene with a known function.  This is a treasure trove for the model eukaryotic organisms, but the catch is that if your favorite organism may not have any GO annotation available or just have computationally generated annotation. Read the <a href="http://www.geneontology.org/GO.doc.shtml">Introduction to Gene Ontology</a>.
+
+
+## NCBI's Conserved Domain Database (CDD)
+
+Identifying conserved protein families and domains are an important part of genome analyses.  NCBI's Conserved Domain Database contains scoring matrices derived from databases of conserved protein domains and proteins families.  These include the curated NCBI Conserved Domains, <a href="http://smart.embl-heidelberg.de/">SMART</a>, <a href="http://www.sanger.ac.uk/Software/Pfam/">PFAM</a>, COGS (Phylogenetic classification of proteins encoded in complete genomes) and KOGS (same as COGS except for eurkaryotes).   The CDD-Search service uses the reverse position-specific BLAST  algorithm (RPSBLAST), that comes with the NCBI blast installation. The query sequence is compared to a position-specific score matrix prepared from the underlying conserved domain alignment.  If you run NCBI's online BLAST a CDD-search is run automatically.  However, you can also down load a local installation of the CDD motif database to generate annotation for your complete genome.  For more information see the <a href="http://www.ncbi.nlm.nih.gov/Structure/cdd/cdd_help.shtml"> CCD Help Page</a>.
+
+### InterPro
+
+"InterPro is a consortium of member databases (PROSITE, Pfam, Prints, ProDom, SMART and TIGRFAMs). Each member database devises methods that can be applied computationally to assign a score for a protein according to how well it matches a given signature. For some types of methods, the classification is binary (i.e. hit or miss), in other cases a numerical value is produced and a cut off point chosen to separate hits from misses. Different member databases create methods/signatures in different ways: some groups build them from alignments studied manually, others use automatic processes with some human input and correction, while ProDom uses an entirely automatic method. See the publications of the different member databases for details." <a href="http://www.ebi.ac.uk/interpro/">InterPro home</a>.
+
+#### GenBank Record Cphy gbk file
+
+<pre>
+     gene            75..1436
+                     /locus_tag="Cphy_0001"
+                     /db_xref="GeneID:5742482"
+     CDS             75..1436
+                     /locus_tag="Cphy_0001"
+                     /note="KEGG: cbf:CLI_0001 chromosomal replication
+                     initiator protein DnaA
+                     TIGRFAM: chromosomal replication initiator protein DnaA
+                     PFAM: Chromosomal replication initiator DnaA domain;
+                     Chromosomal replication initiator DnaA
+                     SMART: AAA ATPase"
+                     /codon_start=1
+                     /transl_table=11
+                     /product="chromosomal replication initiator protein DnaA"
+                     /protein_id="YP_001557131.1"
+                     /db_xref="InterPro:IPR001957"
+                     /db_xref="InterPro:IPR003593"
+                     /db_xref="InterPro:IPR013159"
+                     /db_xref="InterPro:IPR013317"
+                     /db_xref="GI:160878163"
+                     /db_xref="GeneID:5742482"
+                     /translation="MKSLIQEKWNEILEFLKIEYNVTEVSYKTWLLPLKVYDVKDNVI
+                     KLSVDDTKIGANSLDFIKNKYSQFLKTAIAEVINQDFEIEFVLLSQTKAEEKVQTQAP
+                     NKIKNESLSYLNPRYTFDTFVVGANNNLAHAASLAVAESPAEIYNPLFIYGGVGLGKT
+                     HLMHSIAHYILEQNPNSKVLYVTSEKFTNELIESIRNADTTPTEFREKYRNIDVLLID
+                     DIQFIIGKERTQEEFFHTFNTLHESKKQIIISSDKPPKDILTLEERLRSRFEWGLTVD
+                     IQSPDYETRMAILKKKEELDCLTIDDEVMKYIASNIKSNIRELEGALTKIVALSRLKK
+                     KEVDVILAEEALKDLISPDNKKTVTLDLIIEVVSEHFTTSTSEIYSDNRSRNIAYPRQ
+                     IAMYLCRKLTSLSLTDIGKMMGNRDHSTVLHGCNKVEKDIKKDPSFQNTIDVLIKKIN
+                     PTP"
+</pre>
+
+The gene and locus tag are usually identical for most bacterial genes.  The locus tag refers to the product of the gene.  The gene and locus tag can be different if there are introns or the 5' and/or 3' transcript have been mapped on the gene.
+
+The KEGG, TIGRFAM, PFAM, SMART and InterPro fields all results from matches to models (PSSMs, HMMs, etc) in the respective databases.  Here are the links to the InterPro results.
+
+* <a href="http://www.ebi.ac.uk/interpro/ISearch?query=IPR001957"> Bac_DnaA </a>
+* <a href="http://www.ebi.ac.uk/interpro/ISearch?query=IPR003593"> AAA+_ATPase_core </a>
+* <a href="http://www.ebi.ac.uk/interpro/ISearch?query=IPR013159"> Chromosomal replication initiator, DnaA C-terminal </a>
+* <a href="http://www.ebi.ac.uk/interpro/ISearch?query=IPR013317"> Chromosomal replication initiator, DnaA </a>
+
+#### Arabidopsis gbk file
+
+Different genomes have different annotations that depend on the group(s) involved in the sequence and annotation.  In this example we will look a NC_003074.gbk which contains the Arabidopsis chromosome III sequence.  
+The COMMENT field indicates that this record was curated by TAIR which is the group that is responsible for Arabidopsis community database.  This means that TAIR has added a lot of specific information about the DNA sequence in this record.  This includes the location (to the best of their knowledge) of every gene in this nucleotide.  In the lab last week you found the location of your UNKNOWN DNA sequence in this record and the gene that was present in that region.  Here is an example gene
+
+<pre>
+     gene            complement(21508755..21510653)
+                     /locus_tag="AT3G58060"
+                     /db_xref="GeneID:824975"
+     mRNA            complement(join(21508755..21508931,21509171..21509307,
+                     21509386..21509536,21509611..21509789,21509903..21510101,
+                     21510180..21510370,21510452..21510653))
+                     /locus_tag="AT3G58060"
+                     /transcript_id="NM_115668.2"
+                     /db_xref="GI:42566021"
+                     /db_xref="GeneID:824975"
+     CDS             complement(join(21508755..21508931,21509171..21509307,
+                     21509386..21509536,21509611..21509789,21509903..21510101,
+                     21510180..21510370,21510452..21510653))
+                     /locus_tag="AT3G58060"
+                     /note="cation efflux family protein / metal tolerance
+                     protein, putative (MTPc3), member of the cation diffusion
+                     facilitator (CDF) family, or cation efflux (CE) family,
+                     PMID:11500563;
+                     go_component: membrane [goid GO:0016020] [evidence IEA];
+                     go_component: membrane [goid GO:0016020] [evidence ISS];
+                     go_function: cation transporter activity [goid GO:0008324]
+                     [evidence IEA];
+                     go_function: cation transporter activity [goid GO:0008324]
+                     [evidence ISS];
+                     go_function: efflux permease activity [goid GO:0015562]
+                     [evidence ISS];
+                     go_process: cation transport [goid GO:0006812] [evidence
+                     IEA];
+                     go_process: cation transport [goid GO:0006812] [evidence
+                     ISS]"
+                     /codon_start=1
+                     /product="cation transporter/ efflux permease"
+                     /protein_id="NP_191365.2"
+                     /db_xref="GI:42566022"
+                     /db_xref="GeneID:824975"
+                     /translation="MEVNYCPETPLLSSNDHEAIDHKPKLTGMVSSMKSNFFADLPQK
+                     LRSKIDPENPLHLDVSKAAGLKEDEKEYYERQLATLKSFEEVESFLARSDEYTIDEKE
+                     EEEDRAERAAQELAMQISNWANIFLLALKIYATVKSGSIAIAASTLDSLLDLMAGGIL
+                     WFTHLSMKNVNIYKYPIGKLRVQPVGIIIFAAVMATLGFQVLLVAAEQLISNEPSEKM
+                     NHVQLIWLYSIMLSATAIKLVLWIYCKSSRNHIVRAYAKDHHFDVVTNVLGLVAAVLA
+                     NAFYWWLDPTGAILLAIYTIVNWSGTVMENAVSLIGQSAPPEVLQKLTYLVMRQGGDN
+                     IKHVDTVRAYTFGVLYFVEVDIELPEDLPLKEAHAIGESLQIKLEELPEVERAFVHLD
+                     FECHHKPEHSVLSTIPNDL"
+</pre>
+
+The '''gene''' field tell us the location of the gene in the nucleotide sequence which in this example is on the complement strand from position 21508755 to 21510653.  The locus tag is a unique name for the gene.  The '''CDS''' field (coding sequence) tells us what sequence was used to translate the DNA into a protein.  Since the gene contains a number of introns we would need to join together the sequence coordinates listed in this field to create the splice mRNA that is the template for making proteins.   Although the coding sequence is almost always different from the mRNA, since the mRNA contains untranslated 5' (which contain the ribosomal binding sites) and 3' ends, in GenBank records they are often the same since for many genes the 5' and 3' ends of the mRNA have not been identified.  The '''product''' describes, to the best of our current knowledge or at least to the best of the TAIR curators knowledge at the time this record was made, the function of the protein.  There are several other fields such as go_function and go_process that are derived from the [http://www.geneontology.org Gene Ontology Project].  Mappings from the various databases (PFAM, COG, etc) to GO can be found at 
+http://www.geneontology.org/external2go/.
+
+
