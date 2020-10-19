@@ -180,7 +180,7 @@ Phylogenetic analysis will be introduced through a set of slides for the lab. Fr
 
 Carl Woese sequenced isolated and sequenced ribosomal RNA to discover a new domain of life, the Archaea. The method he used for directly sequencing RNA was very laborious as shown in the segment of <a href="https://www.asm.org/index.php/asm-org-updates/itemlist/category/155-intimate-strangers" target="_blank">Intimate Strangers: The Puzzle</a>". His discovery was dependent on using phylogenetic methods to determine the relationship of his microbial sequence to other sequences in the database. Since his discovery, progress sequencing specfic genes from genomic DNA has greatly simplified the process of understanding microbial phylogenies. In this project you will be given a DNA sequence, then construct a multiple sequence alignment and do a phylogenetic analysis to show the relationships among the taxa represented by the DNA sequences. 
 
-I have assembled a core group DNA sequences of small subunit ribosomal gene from our national DNA database Genbank to provide a context for the phylogenetic analysis of your unknown sequence and put it on the Moodle site - Tree_of_Life_Core_Sequences.txt. Download this to your computer. The files contains data for the following species.
+I have assembled a core group DNA sequences of small subunit ribosomal gene from our national DNA database Genbank to provide an example on the Moodle site - Tree_of_Life_Core_Sequences.txt. Download this to your computer. The files contains data for the following species.
 
 * Thermoplasma volcanium
 * Halalkalicoccus jeotgali
@@ -224,7 +224,7 @@ Last night on my computer the <a href="http://www.phylo.org/tools/flash/ciprespo
 
 The tree visualizations on NGPhylogeny.fr are ok for some purposes, but often for publications more tree editing and visualization features are needed. There are a number of packages available to bring trees to like including [Figtree](http://tree.bio.ed.ac.uk/software/figtree/), [Dendroscope](https://www.wsi.uni-tuebingen.de/lehrstuehle/algorithms-in-bioinformatics/software/dendroscope/) and [iTOL](https://itol.embl.de/). [ETE Toolkit](http://etetoolkit.org/) is a framework for analyzing and visualizing trees in Python. For a more complete list see [Wikipedia](https://en.wikipedia.org/wiki/List_of_phylogenetic_tree_visualization_software).
 
-Historically most phylogenetic analysis and tree visualization has been done with independent software tools. There has been a growing move towards using R for phylogenetic analyses. The package [ape: Analysis of Phylogenetics and Evolution](https://rdrr.io/cran/ape/) can access popular multiple sequence alignment and phylogenetic analysis methods. [ggtree](https://bioconductor.org/packages/release/bioc/html/ggtree.html) extends the 'ggplot2' for visualization and annotation of phylogenetic trees with their annotation data. The author, Guangchuang Yu, has recently published an R book [Data Integration, Manipulation and Visualization of Phylogenetic Trees](https://yulab-smu.top/treedata-book/). Based in this book and ggtree vignettes, Stephen Turner has put together a nice lab on [Visualizing and Annotating Phylogenetic Trees with R+ggtree](https://4va.github.io/biodatasci/r-ggtree.html)
+Historically most phylogenetic analysis and tree visualization has been done with independent software tools. There has been a growing move towards using R for phylogenetic analyses. The package [ape: Analysis of Phylogenetics and Evolution](https://rdrr.io/cran/ape/) can access popular multiple sequence alignment and phylogenetic analysis methods. [ggtree](https://bioconductor.org/packages/release/bioc/html/ggtree.html) extends the 'ggplot2' for visualization and annotation of phylogenetic trees with their annotation data. The author, Guangchuang Yu, has recently published an R book [Data Integration, Manipulation and Visualization of Phylogenetic Trees](https://yulab-smu.top/treedata-book/).
 
 # Exercises 
 
@@ -232,6 +232,6 @@ Historically most phylogenetic analysis and tree visualization has been done wit
 
 2. Align and do phylogenetic analysis off the sequences in CIPRES using MAFFT and FastTreeMP. You will need to click on Parameter Set and Save even if you don't change the parameters. Download the fastree_result.tre to your computer. Put the resulting tree file in your .Rmd file
 
-3. Go through the tutorial on [Visualizing and Annotating Phylogenetic Trees with R+ggtree](https://4va.github.io/biodatasci/r-ggtree.html) adding the steps to your .Rmd file.
+3. Go through the tutorial on [Visualizing and Annotating Phylogenetic Trees with R+ggtree](ggtree_tutorial.html) adding the steps to your .Rmd file.
 
 4. Upload your tree file from the FastTreeMP output on CIPRES. Color the tree according to the domains of life. Upload a circular version of the tree to your notebook.
