@@ -10,7 +10,9 @@ output:
 
 ## Learning Objectives
 
-* Sequence Alignment
+* Multiple Sequence Alignment
+* Phylogenetic Inference
+* Tree visualization
 
 ## Sequence Alignment Background
 
@@ -39,7 +41,7 @@ This dot plot represents an alignment of two different strains of Helicobacter p
 
 ### The dynamic programming algorithm
 
-"Dynamic programming was formalized by mathematician Richard Bellman, who was working at RNAD corporation on optimal decision processes. He wanted to concoct an impressive name that would shield his work from US Secretary of Defense Charles Wilson, a man know to be hostile to mathematics research. His work involved times series and planning - thus 'dynamic' and 'programming' (note, nothing particularly to do with computer programming). Bellman especially liked 'dynamic' because "it's impossible to use the work dynamic in the pejorative sense"; he figured dynamic programming was "something not even a Congressman could object to" (Bellman 1984)." (Eddy 2004)
+"[Dynamic programming](https://en.wikipedia.org/wiki/Dynamic_programming) was formalized by mathematician Richard Bellman, who was working at RNAD corporation on optimal decision processes. He wanted to concoct an impressive name that would shield his work from US Secretary of Defense Charles Wilson, a man know to be hostile to mathematics research. His work involved times series and planning - thus 'dynamic' and 'programming' (note, nothing particularly to do with computer programming). Bellman especially liked 'dynamic' because "it's impossible to use the work dynamic in the pejorative sense"; he figured dynamic programming was "something not even a Congressman could object to" (Bellman 1984)." (Eddy 2004)
 
 The dynamic programming algorithm is at the heart of many bioinformatics programs including BLAST (sequence searching), FASTA (sequence searching), CLUSTALW (multiple sequence alignmnet), HMMER (profile searching), GENSCAN (gene finding), MFOLD (RNA folding), and PHYLIP (phylogenetic analysis). Dynamic programing was first used for global alignment of protein sequences by Needleman and Wunnsch (1970) and to find local alignments by Smith and Waterson (1981).
 
