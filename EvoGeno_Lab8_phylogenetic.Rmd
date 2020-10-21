@@ -269,3 +269,6 @@ ggtree(tree) +
 ```
 
 You can order the layers when highlighting for certain effects
+
+![](images/TOL.png)
+
