@@ -14,7 +14,6 @@ editor_options:
 library(knitr)
 opts_chunk$set(message=FALSE, warning=FALSE, eval=TRUE, echo=TRUE, results='hide')
 .ex <- 1
-# library(ggplot2)
 # theme_set(theme_bw(base_size=16) + theme(strip.background = element_blank()))
 # knitr::knit_exit()
 ```
@@ -39,7 +38,7 @@ This lesson does _not_ cover methods and software for _generating_ phylogenetic 
 
 Bioconductor packages usually have great documentation in the form of _vignettes_. Take a look at the [landing page for ggtree](http://bioconductor.org/packages/release/bioc/html/ggtree.html) -- about halfway down the page under the "Documentation" heading there are multiple walkthrough tutorials directed to different applications and functionalities of ggtree, chock full of runnable examples and explanations.
 
-Just like R packages from CRAN, you only need to install Bioconductor packages once ([instructions here](setup.html#bioconductor)), then load them every time you start a new R session. Load the tidyverse package first.
+Just like R packages from CRAN, you only need to install Bioconductor packages once, then load them every time you start a new R session. Load the tidyverse package first.
 
 ```{r load_ggtree_without_junk, echo=FALSE}
 suppressPackageStartupMessages(suppressWarnings(library(tidyverse)))
@@ -361,7 +360,7 @@ This data was reanalyzed in the [ggtree paper](http://onlinelibrary.wiley.com/do
 
 The subset of the data used here contains 76 H3 hemagglutinin gene sequences of a lineage containing both swine and human influenza A viruses. The sequence data set was re-analyzed by using BEAST (available at <http://beast.bio.ed.ac.uk/>). BEAST (Bayesian Evolutionary Analysis Sampling Trees) can give you rooted, time-measured phylogenies inferred using molecular clock models. 
 
-For this you'll need the `flu_tree_beast.tree` output file from BEAST and the `flu_aasequence.fasta` FASTA file with the multiple sequence alignment. These are both available on the [data downloads page](data.html). First let's read in the tree with `read.beast()` (instead of the `read.tree()` we used before). Let's add a scale bar with theme_tree2(). This gives you genetic distance. But, we have time measured here with molecular clock models. We've only estimated the _relative_ time between branching events, so if we want to actually see _dates_ on the x-axis, we need to supply the most recent sampling date to the `ggtree()` call. Do this by setting `mrsd="YYYY-MM-DD"` inside `ggtree()`. 
+For this you'll need the `flu_tree_beast.tree` output file from BEAST and the `flu_aasequence.fasta` FASTA file with the multiple sequence alignment. These are both available on the [data downloads page](https://4va.github.io/biodatasci/data.html). First let's read in the tree with `read.beast()` (instead of the `read.tree()` we used before). Let's add a scale bar with theme_tree2(). This gives you genetic distance. But, we have time measured here with molecular clock models. We've only estimated the _relative_ time between branching events, so if we want to actually see _dates_ on the x-axis, we need to supply the most recent sampling date to the `ggtree()` call. Do this by setting `mrsd="YYYY-MM-DD"` inside `ggtree()`. 
 
 Finally, let's add some tip labels. We'll want to right-align them, and by default the dotted line is a little too thick. Let's reduce the `linesize` a bit. Now, some of the labels might be falling off the margin. Set the `xlim` to limit the axis to show between 1990 and 2020. You could get MRCAs and node numbers and do all the annotations that we did before the same way here.
 

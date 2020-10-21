@@ -1,0 +1,66 @@
+---
+title: "Lab 8 : CIPRES tutorial"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: united
+    highlight: tango
+---
+
+### This is a step by step tutorial for doing a multiple sequence aligment and phylogenetic analysis in CIPRES
+
+Log into [CIPRES](https://www.phylo.org/) and create a new folder
+
+![](cipres/CIPRES_newfolder.png)
+
+
+Go into the Data folder. Upload your Tree_of_Life_Cores_sequences.fna file
+
+![](cipres/CIPRES_upload.png)
+
+#### Running MAFFT
+
+Click on the Tasks Folder.  Create New Task. Select the input file (Tree_of_Life_Cores_sequences.fna). Select the tool (MAFFT). Select the parameter set. Show Advanced Parameters and then Save Parameters.
+
+![](cipres/CIPRES_new_task.png)
+
+Save and Run Task. You will get an email when the Task (Job) is finished
+
+![](cipres/CIPRES_mafft_finished.png)
+
+When the task is finished, click on the Label `TOL_mafft`
+
+![](cipres/CIPRES_mafft_label.png)
+
+Click on Output `View`
+
+![](cipres/CIPRES_mafft_output.png)
+
+Click on View, Rename and Save to Current Folder. 
+
+![](cipres/CIPRES_mafft_rename.png)
+
+This file will be saved in your data folder.
+
+#### Running FasttreeMP
+
+Create a new task. Use for input the TOL_mafft_ouput file
+
+![](cipres/CIPRES_fasttree.png)
+
+
+Save and Run Task. When the job is finished as above with the MAFFT results click on the Label `TOL_fastree` and then Output `View` and then fastree_result.tre `View`. Rename and Save to Current Folder
+
+![](cipres/CIPRES_fasttreeMP_result.png)
+
+#### Downloading your files to use in MSA and Tree Visualization applications
+
+Go to you Data folder. Click on the link for Data ID link for TOL_output.mafft  Save to your local computer in your GitHub directory for the class. You can upload and view the sequence alignmentin several MSA viewers including [Mview](https://www.ebi.ac.uk/Tools/msa/mview/)
+
+
+![](cipres/MView_TOL.png)
+
+Now download you TOL_fastree_result.tre file. Save to your local computer in your GitHub directory for the class. This is the tree file for using in `ggtree` and other tree visualization programs. This is a newick tree file. You can load it into ggtree using the `treeio` package and the function `read.tree()`.  There is no need to, but you can open it up on your computer in text editors such as Notepad (Windows) and TextEdit (OSX).
+
+
