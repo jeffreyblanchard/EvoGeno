@@ -130,6 +130,12 @@ The workspace tab shows all the active objects. The history tab shows a list of 
 
 There are data sets that come with the R package and used in tutorials. If you run the following command you will see a graph of related to the cars data set in the Plots window
 
+#### Basic set up of RStudio
+
+In the menu go to Tools > Global Options.
+
+There are a number of ways to customize your RStudio set up. For this class, I recommend not saving your workspace as a `.RData` file and if you do then not restoring it on start up. You can also change the appearance and colorization of RStudio. 
+
 ### Basic computation
 R can be used as an ordinary calculator. Here are a few examples:
 
