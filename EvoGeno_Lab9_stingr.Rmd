@@ -1,5 +1,5 @@
 ---
-title: "Lab 9A : Programming in R - Control Structures and Functions"
+title: "Lab 9A : Programming in R - Regular Expressions"
 output:
   html_document:
     toc: true
