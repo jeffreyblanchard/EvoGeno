@@ -26,6 +26,7 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 8: [Sequence Alignment, Phylogenetic Analysis and Tree Visualization](EvoGeno_Lab8_phylogenetic.html)
 * Lab 8: [Tree Visualization using ggtree](ggtree_tutorial.html)
 * Lab 9 : [Programming in R - Regular Expressions](EvoGeno_Lab9_stringr.html)
+* Lab 9x : [Programming in R - Loops and Functions](EvoGeno_Lab9x_progR_loops.html)
 
 ### HPC Labs
 * [University of Massachusetts Green High Performance Computing Cluster (MGHPCC) registration and login](EvoGeno_Labx_MGHPCC.html)
