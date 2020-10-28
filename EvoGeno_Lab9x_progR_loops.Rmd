@@ -315,4 +315,6 @@ f(num = 2)
 
 Writing `for` and `while` loops is useful when programming but not particularly easy when working interactively on the command line.  The Apply family comprises: apply, lapply, sapply, vapply, mapply, rapply, and tapply. The Family of Apply functions pertains to the R base package, and is populated with functions to manipulate slices of data from matrices, arrays, lists and data frames in a repetitive way. In Tidyverse this functionality is covered by [purrr](https://purrr.tidyverse.org/). The `apply` and `purrr` functions in R are designed to avoid explicit use of loop constructs. They act on an input list, matrix or array, and apply a named function with one or several optional arguments. 
 
+## Excercises
 
+Make a Rmd file with the above examples. Explore the examples by modifying each example is some way. Knit and turn in your html file.  
