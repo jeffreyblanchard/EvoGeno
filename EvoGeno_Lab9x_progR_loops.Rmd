@@ -8,6 +8,7 @@ output:
     highlight: tango
 ---
 
+
 __Much of the text in this lab is derived from Roger Peng's [R Programming for Data Science](https://github.com/rdpeng/rprogdatascience), the chapters [Iteration](https://r4ds.had.co.nz/iteration.html) and [Functions] (https://r4ds.had.co.nz/functions.html) chapters in R for Data Science] by Hadley Wickham and supplements from Thomas Girke's [Data Analysis in Genome Biology](https://github.com/tgirke/GEN242-2016/).__
 
 ## Control Structures
@@ -192,10 +193,6 @@ Conditions are always evaluated from left to right. For example, in the above co
 
 ## Functions
 
-```{r,echo=FALSE}
-knitr::opts_chunk$set(comment = NA, prompt = TRUE, collapse = TRUE, error = TRUE)
-```
-
 Writing functions is a core activity of an R programmer. It represents the key step of the transition from a user of R to a developer who creates new functionality for R. While we are focusing on learning how to use R and it's package, it is helpful to understand the basics of functions. We have already been using them extensively. Functions are often used to encapsulate a sequence of expressions that need to be executed numerous times, perhaps under slightly different conditions. Functions are also often written when code must be shared with others or the public. 
 
 The writing of a function allows a developer to create an interface to the code, that is explicitly specified with a set of parameters. This interface provides an abstraction of the code to potential users. This abstraction simplifies the users' lives because it relieves them from having to know every detail of how the code operates. In addition, the creation of an interface allows the developer to communicate to the user the aspects of the code that are important or are most relevant.
@@ -273,7 +270,7 @@ Note that there is a `return()` function that can be used to return an explicity
 
 Finally, in the above function, the user must specify the value of the argument `num`. If it is not specified by the user, R will throw an error.
 
-```{r}
+```{r, eval=FALSE}
 f()
 ```
 

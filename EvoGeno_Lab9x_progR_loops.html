@@ -679,72 +679,71 @@ summary {
 <h3>Your First Function</h3>
 <p>Functions are defined using the <code>function()</code> directive and are stored as R objects just like anything else. In particular, they are R objects of class “function”.</p>
 <p>Here’s a simple function that takes no arguments and does nothing.</p>
-<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1"><span class="op">&gt;</span><span class="st"> </span>f &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb20-2" title="2"><span class="op">+</span><span class="st">         </span><span class="co">## This is an empty function</span></a>
-<a class="sourceLine" id="cb20-3" title="3"><span class="op">+</span><span class="st"> </span>}</a>
-<a class="sourceLine" id="cb20-4" title="4"><span class="op">&gt;</span><span class="st"> </span><span class="co">## Functions have their own class</span></a>
-<a class="sourceLine" id="cb20-5" title="5"><span class="er">&gt;</span><span class="st"> </span><span class="kw">class</span>(f)  </a>
-<a class="sourceLine" id="cb20-6" title="6">[<span class="dv">1</span>] <span class="st">&quot;function&quot;</span></a>
-<a class="sourceLine" id="cb20-7" title="7"><span class="op">&gt;</span><span class="st"> </span><span class="co">## Execute this function</span></a>
-<a class="sourceLine" id="cb20-8" title="8"><span class="er">&gt;</span><span class="st"> </span><span class="kw">f</span>()       </a>
-<a class="sourceLine" id="cb20-9" title="9"><span class="ot">NULL</span></a></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb20-2" title="2">        <span class="co">## This is an empty function</span></a>
+<a class="sourceLine" id="cb20-3" title="3">}</a>
+<a class="sourceLine" id="cb20-4" title="4"><span class="co">## Functions have their own class</span></a>
+<a class="sourceLine" id="cb20-5" title="5"><span class="kw">class</span>(f)  </a></code></pre></div>
+<pre><code>## [1] &quot;function&quot;</code></pre>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="co">## Execute this function</span></a>
+<a class="sourceLine" id="cb22-2" title="2"><span class="kw">f</span>()       </a></code></pre></div>
+<pre><code>## NULL</code></pre>
 <p>The next thing we can do is create a function that actually has a non-trivial <em>function body</em>.</p>
-<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb21-1" title="1"><span class="op">&gt;</span><span class="st"> </span>f &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
-<a class="sourceLine" id="cb21-2" title="2"><span class="op">+</span><span class="st">         </span><span class="kw">cat</span>(<span class="st">&quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb21-3" title="3"><span class="op">+</span><span class="st"> </span>}</a>
-<a class="sourceLine" id="cb21-4" title="4"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb21-5" title="5">Hello, world<span class="op">!</span></a></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>() {</a>
+<a class="sourceLine" id="cb24-2" title="2">        <span class="kw">cat</span>(<span class="st">&quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb24-3" title="3">}</a>
+<a class="sourceLine" id="cb24-4" title="4"><span class="kw">f</span>()</a></code></pre></div>
+<pre><code>## Hello, world!</code></pre>
 <p>The last aspect of a basic function is the <em>function arguments</em>. These are the options that you can specify to the user that the user may explicity set. For this basic function, we can add an argument that determines how many times “Hello, world!” is printed to the console.</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb22-1" title="1"><span class="op">&gt;</span><span class="st"> </span>f &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</a>
-<a class="sourceLine" id="cb22-2" title="2"><span class="op">+</span><span class="st">         </span><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
-<a class="sourceLine" id="cb22-3" title="3"><span class="op">+</span><span class="st">                 </span><span class="kw">cat</span>(<span class="st">&quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
-<a class="sourceLine" id="cb22-4" title="4"><span class="op">+</span><span class="st">         </span>}</a>
-<a class="sourceLine" id="cb22-5" title="5"><span class="op">+</span><span class="st"> </span>}</a>
-<a class="sourceLine" id="cb22-6" title="6"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>(<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb22-7" title="7">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb22-8" title="8">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb22-9" title="9">Hello, world<span class="op">!</span></a></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</a>
+<a class="sourceLine" id="cb26-2" title="2">        <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
+<a class="sourceLine" id="cb26-3" title="3">                <span class="kw">cat</span>(<span class="st">&quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span>)</a>
+<a class="sourceLine" id="cb26-4" title="4">        }</a>
+<a class="sourceLine" id="cb26-5" title="5">}</a>
+<a class="sourceLine" id="cb26-6" title="6"><span class="kw">f</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## Hello, world!
+## Hello, world!
+## Hello, world!</code></pre>
 <p>Obviously, we could have just cut-and-pasted the <code>cat(&quot;Hello, world!\n&quot;)</code> code three times to achieve the  same effect, but then we wouldn’t be programming, would we? Also, it would be un-neighborly of you to give your code to someone else and force them to cut-and-paste the code however many times the need to see “Hello, world!”.</p>
 <blockquote>
 <p>In general, if you find yourself doing a lot of cutting and pasting, that’s usually a good sign that you might need to write a function. Finally, the function above doesn’t <em>return</em> anything. It just prints “Hello, world!” to the console <code>num</code> number of times and then exits. But often it is useful if a function returns something that perhaps can be fed into another section of code.</p>
 </blockquote>
 <p>This next function returns the total number of characters printed to the console.</p>
-<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb23-1" title="1"><span class="op">&gt;</span><span class="st"> </span>f &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</a>
-<a class="sourceLine" id="cb23-2" title="2"><span class="op">+</span><span class="st">         </span>hello &lt;-<span class="st"> &quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb23-3" title="3"><span class="op">+</span><span class="st">         </span><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
-<a class="sourceLine" id="cb23-4" title="4"><span class="op">+</span><span class="st">                 </span><span class="kw">cat</span>(hello)</a>
-<a class="sourceLine" id="cb23-5" title="5"><span class="op">+</span><span class="st">         </span>}</a>
-<a class="sourceLine" id="cb23-6" title="6"><span class="op">+</span><span class="st">         </span>chars &lt;-<span class="st"> </span><span class="kw">nchar</span>(hello) <span class="op">*</span><span class="st"> </span>num</a>
-<a class="sourceLine" id="cb23-7" title="7"><span class="op">+</span><span class="st">         </span>chars</a>
-<a class="sourceLine" id="cb23-8" title="8"><span class="op">+</span><span class="st"> </span>}</a>
-<a class="sourceLine" id="cb23-9" title="9"><span class="op">&gt;</span><span class="st"> </span>meaningoflife &lt;-<span class="st"> </span><span class="kw">f</span>(<span class="dv">3</span>)</a>
-<a class="sourceLine" id="cb23-10" title="10">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb23-11" title="11">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb23-12" title="12">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb23-13" title="13"><span class="er">&gt;</span><span class="st"> </span><span class="kw">print</span>(meaningoflife)</a>
-<a class="sourceLine" id="cb23-14" title="14">[<span class="dv">1</span>] <span class="dv">42</span></a></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb28-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(num) {</a>
+<a class="sourceLine" id="cb28-2" title="2">        hello &lt;-<span class="st"> &quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb28-3" title="3">        <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
+<a class="sourceLine" id="cb28-4" title="4">                <span class="kw">cat</span>(hello)</a>
+<a class="sourceLine" id="cb28-5" title="5">        }</a>
+<a class="sourceLine" id="cb28-6" title="6">        chars &lt;-<span class="st"> </span><span class="kw">nchar</span>(hello) <span class="op">*</span><span class="st"> </span>num</a>
+<a class="sourceLine" id="cb28-7" title="7">        chars</a>
+<a class="sourceLine" id="cb28-8" title="8">}</a>
+<a class="sourceLine" id="cb28-9" title="9">meaningoflife &lt;-<span class="st"> </span><span class="kw">f</span>(<span class="dv">3</span>)</a></code></pre></div>
+<pre><code>## Hello, world!
+## Hello, world!
+## Hello, world!</code></pre>
+<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb30-1" title="1"><span class="kw">print</span>(meaningoflife)</a></code></pre></div>
+<pre><code>## [1] 42</code></pre>
 <p>In the above function, we didn’t have to indicate anything special in order for the function to return the number of characters. In R, the return value of a function is always the very last expression that is evaluated. Because the <code>chars</code> variable is the last expression that is evaluated in this function, that becomes the return value of the function.</p>
 <p>Note that there is a <code>return()</code> function that can be used to return an explicity value from a function, but it is rarely used in R (we will discuss it a bit later in this chapter).</p>
 <p>Finally, in the above function, the user must specify the value of the argument <code>num</code>. If it is not specified by the user, R will throw an error.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb24-1" title="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>()</a>
-<a class="sourceLine" id="cb24-2" title="2">Error <span class="cf">in</span> <span class="kw">f</span>()<span class="op">:</span><span class="st"> </span>argument <span class="st">&quot;num&quot;</span> is missing, with no default</a></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb32-1" title="1"><span class="kw">f</span>()</a></code></pre></div>
 <p>We can modify this behavior by setting a <em>default value</em> for the argument <code>num</code>. Any function argument can have a default value, if you wish to specify it. Sometimes, argument values are rarely modified (except in special cases) and it makes sense to set a default value for that argument. This relieves the user from having to specify the value of that argument every single time the function is called.</p>
 <p>Here, for example, we could set the default value for <code>num</code> to be 1, so that if the function is called without the <code>num</code> argument being explicitly specified, then it will print “Hello, world!” to the console once.</p>
-<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb25-1" title="1"><span class="op">&gt;</span><span class="st"> </span>f &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">num =</span> <span class="dv">1</span>) {</a>
-<a class="sourceLine" id="cb25-2" title="2"><span class="op">+</span><span class="st">         </span>hello &lt;-<span class="st"> &quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span></a>
-<a class="sourceLine" id="cb25-3" title="3"><span class="op">+</span><span class="st">         </span><span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
-<a class="sourceLine" id="cb25-4" title="4"><span class="op">+</span><span class="st">                 </span><span class="kw">cat</span>(hello)</a>
-<a class="sourceLine" id="cb25-5" title="5"><span class="op">+</span><span class="st">         </span>}</a>
-<a class="sourceLine" id="cb25-6" title="6"><span class="op">+</span><span class="st">         </span>chars &lt;-<span class="st"> </span><span class="kw">nchar</span>(hello) <span class="op">*</span><span class="st"> </span>num</a>
-<a class="sourceLine" id="cb25-7" title="7"><span class="op">+</span><span class="st">         </span>chars</a>
-<a class="sourceLine" id="cb25-8" title="8"><span class="op">+</span><span class="st"> </span>}</a>
-<a class="sourceLine" id="cb25-9" title="9"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>()    <span class="co">## Use default value for &#39;num&#39;</span></a>
-<a class="sourceLine" id="cb25-10" title="10">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb25-11" title="11">[<span class="dv">1</span>] <span class="dv">14</span></a>
-<a class="sourceLine" id="cb25-12" title="12"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>(<span class="dv">2</span>)   <span class="co">## Use user-specified value</span></a>
-<a class="sourceLine" id="cb25-13" title="13">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb25-14" title="14">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb25-15" title="15">[<span class="dv">1</span>] <span class="dv">28</span></a></code></pre></div>
+<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb33-1" title="1">f &lt;-<span class="st"> </span><span class="cf">function</span>(<span class="dt">num =</span> <span class="dv">1</span>) {</a>
+<a class="sourceLine" id="cb33-2" title="2">        hello &lt;-<span class="st"> &quot;Hello, world!</span><span class="ch">\n</span><span class="st">&quot;</span></a>
+<a class="sourceLine" id="cb33-3" title="3">        <span class="cf">for</span>(i <span class="cf">in</span> <span class="kw">seq_len</span>(num)) {</a>
+<a class="sourceLine" id="cb33-4" title="4">                <span class="kw">cat</span>(hello)</a>
+<a class="sourceLine" id="cb33-5" title="5">        }</a>
+<a class="sourceLine" id="cb33-6" title="6">        chars &lt;-<span class="st"> </span><span class="kw">nchar</span>(hello) <span class="op">*</span><span class="st"> </span>num</a>
+<a class="sourceLine" id="cb33-7" title="7">        chars</a>
+<a class="sourceLine" id="cb33-8" title="8">}</a>
+<a class="sourceLine" id="cb33-9" title="9"><span class="kw">f</span>()    <span class="co">## Use default value for &#39;num&#39;</span></a></code></pre></div>
+<pre><code>## Hello, world!</code></pre>
+<pre><code>## [1] 14</code></pre>
+<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb36-1" title="1"><span class="kw">f</span>(<span class="dv">2</span>)   <span class="co">## Use user-specified value</span></a></code></pre></div>
+<pre><code>## Hello, world!
+## Hello, world!</code></pre>
+<pre><code>## [1] 28</code></pre>
 <p>Remember that the function still returns the number of characters printed to the console.</p>
 <p>At this point, we have written a function that</p>
 <ul>
@@ -753,10 +752,10 @@ summary {
 <li><p><em>returns</em> the number of characters printed to the console</p></li>
 </ul>
 <p>Functions have <em>named arguments</em> which can optionally have default values. Because all function arguments have names, they can be specified using their name.</p>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb26-1" title="1"><span class="op">&gt;</span><span class="st"> </span><span class="kw">f</span>(<span class="dt">num =</span> <span class="dv">2</span>)</a>
-<a class="sourceLine" id="cb26-2" title="2">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb26-3" title="3">Hello, world<span class="op">!</span></a>
-<a class="sourceLine" id="cb26-4" title="4">[<span class="dv">1</span>] <span class="dv">28</span></a></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb39-1" title="1"><span class="kw">f</span>(<span class="dt">num =</span> <span class="dv">2</span>)</a></code></pre></div>
+<pre><code>## Hello, world!
+## Hello, world!</code></pre>
+<pre><code>## [1] 28</code></pre>
 </div>
 </div>
 <div id="looping-on-the-command-line-using-apply-family-in-r-base-or-purrr-in-tidyverse" class="section level2">
