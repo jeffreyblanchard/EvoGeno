@@ -195,8 +195,6 @@ vcf@gt[1:6, 1:4]
 ```
 
 
-
-
 ### vcfR
 
 
@@ -281,14 +279,7 @@ According to the VCF specification this can be different for each variant.
 
 ### Introduction
 
-
-Analysis of genome data for populations can be seen as similar to the analyses of other marker systems discussed in previous chapters of this book, except that genome data analyses include larger quantities of data.
-For example, VCF data (discussed in '[reading VCF data](reading_vcf.html)') can be read into R using *vcfR* [@knaus2017vcfr] to create a *vcfR* object.
-This object can be converted into a genlight object [@jombart2008adegenet] and then a snpclone object [@kamvar2014poppr, @kamvar2015novel] if deemed necessary.
-Analysis on these objects has been covered in previous sections.
-Genome scale data provides additional analytical options as well.
-For example, when assumptions about the neutrality of the majority of the genome are appropriate, this can be used as a null hypothesis and used to help identify markers that differentiate from this assumption.
-Here we'll provide examples of how genomic data may be analyzed.
+Analysis of genome data for populations can be seen as similar to the analyses of other marker systems discussed in previous chapters of this book, except that genome data analyses include larger quantities of data. For example, VCF data (discussed in '[reading VCF data](reading_vcf.html)') can be read into R using *vcfR* [@knaus2017vcfr] to create a *vcfR* object. This object can be converted into a genlight object [@jombart2008adegenet] and then a snpclone object [@kamvar2014poppr, @kamvar2015novel] if deemed necessary. Analysis on these objects has been covered in previous sections. Genome scale data provides additional analytical options as well. For example, when assumptions about the neutrality of the majority of the genome are appropriate, this can be used as a null hypothesis and used to help identify markers that differentiate from this assumption. Here we'll provide examples of how genomic data may be analyzed.
 
 
 ```{r child = 'Grunwald/data_genome.Rmd'}
@@ -306,6 +297,7 @@ Once the file is read in we can validate its contents using the `show` method wh
 ```{r, results='hide'}
 library('vcfR')
 vcf <- read.vcfR("Grunwald/pinfsc50_filtered.vcf.gz")
+# This data can also be download from the course repo - https://github.com/jeffreyblanchard/EvoGeno/blob/master/Grunwald/pinfsc50_filtered.vcf.gz
 ```
 
 
