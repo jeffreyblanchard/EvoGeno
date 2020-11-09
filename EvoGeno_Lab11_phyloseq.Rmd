@@ -1,9 +1,7 @@
 ---
-title: "Lab 11: Microbiome Analysis using Phyloseq"
+title: "Lab 11: Microbiome Analysis using data2 and phyloseq"
 output:
   html_document:
-    toc: true
-    toc_depth: 4
     theme: united
     highlight: tango
 editor_options: 
