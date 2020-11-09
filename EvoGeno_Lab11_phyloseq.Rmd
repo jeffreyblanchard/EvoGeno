@@ -1,0 +1,52 @@
+---
+title: "Lab 11: Microbiome Analysis using Phyloseq"
+output:
+  html_document:
+    toc: true
+    toc_depth: 4
+    theme: united
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction to Microbiome Analysis
+
+[dada2](https://benjjneb.github.io/dada2/index.html) and [phyloseq](https://joey711.github.io/phyloseq/) are two complementary R packages for the analysis of microbial community data developed in [Susan Holmes' research group](https://statweb.stanford.edu/~susan/) at Stanford. Today we will go through the tutorials associated with these packages.
+
+## Notes
+
+### Installing `phyloseq`
+
+`phyloseq` is installed through Bioconductor using the BiocManager
+
+```{r, eval=FALSE}
+BiocManager::install("phyloseq")
+BiocManager::install("dada2")
+BiocManager::install("DECIPHER")
+```
+
+For the tutorials you will need to download and decompress (unzip) the files. I put this in my data folder. The results should be a directory `MiSeq_SOP` with the following files.
+
+```{r, eval=FALSE}
+path <- "data/MiSeq_SOP" # CHANGE ME to the directory containing the fastq files after unzipping.
+list.files(path)
+```
+
+You will need to download the [silva training set](https://zenodo.org/record/3986799). The current file is `silva_nr99_v138_train_set.fa.gz` and put it in your data folder
+
+```{r, eval=FALSE}
+taxa <- assignTaxonomy(seqtab.nochim, "data/silva_nr99_v138_train_set.fa.gz", multithread=TRUE)
+```
+
+To use `DECIPHER` get the most recent .RData file from [DECIPHER downloads](http://www2.decipher.codes/Downloads.html) then modify the tutorial code with your path and the new file names.
+
+```{r, eval=FALSE}
+dna <- DNAStringSet(getSequences(seqtab.nochim)) # Create a DNAStringSet from the ASVs
+load("data/SILVA_SSU_r138_2019.RData") # CHANGE TO THE PATH OF YOUR TRAINING SET
+```
+
+## Exercises
+
+Create your own Rmd files for the dada2 tutorials including the bonus phyloseq section.
+

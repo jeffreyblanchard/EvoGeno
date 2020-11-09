@@ -44,8 +44,8 @@ time_series_long_joined_counts <- time_series_long_joined %>%
 global_time_series <- time_series_long_joined
 
 # Get first and last date for graph ***There are NA in the date field to consider
-first_date = min(global_time_series$Date, na.rm = TRUE)
-last_date = max(global_time_series$Date, na.rm = TRUE)
+#first_date = min(global_time_series$Date, na.rm = TRUE)
+#last_date = max(global_time_series$Date, na.rm = TRUE)
 
 # Defining reporting types
 Report_Type = c("Confirmed", "Deaths")
