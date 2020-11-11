@@ -1,0 +1,28 @@
+---
+title: "Lab 11x: Microbiome Analysis using phyloseq"
+output:
+  html_document:
+    theme: united
+    highlight: tango
+editor_options: 
+  chunk_output_type: console
+---
+
+## Introduction to Microbiome Analysis
+
+[dada2](https://benjjneb.github.io/dada2/index.html) and [phyloseq](https://joey711.github.io/phyloseq/) are two complementary R packages for the analysis of microbial community data developed in [Susan Holmes' research group](https://statweb.stanford.edu/~susan/) at Stanford. Today we will go through the tutorials associated with these packages.
+
+##  `phyloseq`
+
+Today we will go through the `phyloseq` the first 4 of these phyoseq related tutorials
+
+1. [Ordination](https://joey711.github.io/phyloseq/plot_ordination-examples.html)
+2. [Alpha Diversity](https://joey711.github.io/phyloseq/plot_richness-examples.html)
+3. [Heatmaps](https://joey711.github.io/phyloseq/plot_heatmap-examples.html)
+4. [Networks](http://joey711.github.io/phyloseq/plot_network-examples.html)
+5. [Trees](https://joey711.github.io/phyloseq/plot_tree-examples.html)
+6. [Bar Plots](https://joey711.github.io/phyloseq/plot_bar-examples.html)
+
+# Exercises
+
+Students in 697 should to through the tutorials for Ordination, Alpha Diversity, Heatmaps and Networks and link to a single html file on GitHub. Students in 597 should go through the tutorials, but do not need to post anything (unless you want to :))
