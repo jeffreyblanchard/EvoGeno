@@ -12,8 +12,6 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 
 ## Labs
 
-### R Labs
-
 * Lab 1 : [Introduction to R and Reproducible Research](EvoGeno_Lab1.html)
 * Lab 2 : [git, GitHub and Rstudio project](EvoGeno_Lab2_GitHub.html)
 * Lab 3 : [Data Wrangling](EvoGeno_Lab3_Data_Wrangling.html)
@@ -23,17 +21,14 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 6 : [Data Maps, Interactive Graphs and Animations from the COVID-19 reporting data](EvoGeno_Lab6_maps.html)
 * Lab 6x : [R Shiny apps using the COVID-19 reporting data](EvoGeno_Lab6x_Shiny.html)
 * Lab 7 : [RNA-Seq workflow: gene-level exploratory analysis and differential expression](EvoGeno_Lab7_rnaseq.html)
-* Lab 8: [Sequence Alignment, Phylogenetic Analysis and Tree Visualization](EvoGeno_Lab8_phylogenetic.html)
-* Lab 8: [Tree Visualization using ggtree](ggtree_tutorial.html)
+* Lab 7x : [Working on the Command Line](EvoGeno_Lab7x_cmd.html)
+* Lab 8a: [Sequence Alignment, Phylogenetic Analysis and Tree Visualization](EvoGeno_Lab8_phylogenetic.html)
+* Lab 8b: [Tree Visualization using ggtree](ggtree_tutorial.html)
+* lab 8x : [NCBI databases](EvoGeno_Lab8x_blast_msa.html)
 * Lab 9 : [Programming in R - Regular Expressions](EvoGeno_Lab9_stringr.html)
 * Lab 9x : [Programming in R - Control Structures and Functions](EvoGeno_Lab9x_progR_loops.html)
 * Lab 10 : [Population genomics based on high throughput sequencing (HTS)](EvoGeno_Lab10_SNP.html)
 * Lab 11 : [Microbiome Analysis using dada2 and phyloseq](EvoGeno_Lab11_dada2.html)
 * Lab 11x : [Microbiome Analysis using phyloseq](EvoGeno_Lab11x_phyloseq.html)
+* Lab 12 : [Network Analysis using Cytoscape and RCy3](EvoGeno_Lab12_cytoscape.html)
 
-### HPC Labs
-* [University of Massachusetts Green High Performance Computing Cluster (MGHPCC) registration and login](EvoGeno_Labx_MGHPCC.html)
-* Lab 7x : [Working on the Command Line](EvoGeno_Lab7x_cmd.html)
-
-### Other
-* lab 8x : [NCBI databases](EvoGeno_Lab8x_blast_msa.html)

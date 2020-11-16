@@ -1,0 +1,63 @@
+---
+title: "Lab 12: Network Analysis using Cytoscape and RCy3"
+output:
+  html_document:
+    highlight: tango
+    theme: united
+    toc: yes
+    toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+## Introduction to Network Analysis
+
+[Cytoscape](www.cytoscape.org) is a popular tool for network analysis. It has been in developed for over 20 years and now has a robust ecosystem with many [plugins/apps](https://apps.cytoscape.org/) to for specific uses. Their is a detail [user manual]( Cytoscape 3.8.2 User Manual) (which can be edited on [github](https://github.com/cytoscape/cytoscape-manual/tree/956f3b70754d79fbe25502f76af88edc3278d690/docs)) and [tutorials](https://github.com/cytoscape/cytoscape-tutorials/wiki).
+
+Within R there are several alternative graph visualization packages including [igraph](https://igraph.org/r/) and the Bioconductor package [graph](https://www.bioconductor.org/packages/release/bioc/html/graph.html). Both are excellent packages however this past year a new R interface to Cytocape [Rcy3](https://bioconductor.org/packages/release/bioc/html/RCy3.html) was released which we will explore today. Here is the initial [publication](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6880260/pdf/f1000research-8-23766.pdf) describing `Rcy3`. 
+
+## On the Computer
+
+### Cytoscape
+
+* Download, install and open Cytoscape
+* Read through the [Tour of Cytoscape](https://cytoscape.org/cytoscape-tutorials/protocols/tour-of-cytoscape/#/)
+* Do the recommended exercises on `Basic Data Visualization` and `Differentially Expressed Genes`
+
+
+### RCy3
+
+* Go through the first vignette `Overview of RCy3`
+
+#### Notes
+
+Check to make sure it can connect to Cytoscape
+```{r}
+library(RCy3)
+cytoscapePing()
+```
+
+Note that the code for the first graph will run in the R console, but not in Rmd (I am not sure why at the moment).  All other code chunks knit fine, but the images appear in Cytoscape.
+
+```
+c("node 0","node 1","node 2","node 3"),
+           group=c("A","A","B","B"), # categorical strings
+           score=as.integer(c(20,10,15,5)), # integers
+           stringsAsFactors=FALSE)
+edges <- data.frame(source=c("node 0","node 0","node 0","node 2"),
+           target=c("node 1","node 2","node 3","node 3"),
+           interaction=c("inhibits","interacts","activates","interacts"),  # optional
+           weight=c(5.1,3.0,5.2,9.9), # numeric
+           stringsAsFactors=FALSE)
+
+createNetworkFromDataFrames(nodes,edges, title="my first network", collection="DataFrame Example")
+```
+
+The network will not appear in R, but in Cytoscape
+
+![](images/RCy3_firstgraph.png)
+
+## Exercises
+
+Create a .Rmd that shows your final graphs from the Cytoscape and RCy3 exercises. Link to your main course page.
