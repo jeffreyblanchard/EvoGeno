@@ -1,5 +1,5 @@
 ---
-title: "Evolutionary Genomics & Bionformatics"
+title: "Evolutionary Genomics & Bioinformatics"
 output:
   prettydoc::html_pretty:
     theme: cayman
