@@ -1,0 +1,35 @@
+---
+title: "Lab 13 : Sprucing up your Rmarkdown and GitHub Page"
+output:
+  prettydoc::html_pretty:
+    theme: hpstr
+    highlight: github
+    toc: yes
+    toc_depth: 3
+  pdf_document:
+    toc: yes
+    toc_depth: '3'
+---
+
+### Creating Pretty Documents from R Markdown]
+
+Way back in Lab 2 there was a link to [Creating Pretty Documents from R Markdown](https://prettydoc.statr.me/)
+
+First install the `prettydoc` package
+
+Then in the `'yaml` block at the top of your Rmd file
+
+```
+output:
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
+```
+
+### How to create a simple website with RMarkdown
+
+Also in Lab 2 was a link on  [How to create a simple website with RMarkdown](https://nceas.github.io/training-rmarkdown-website/tutorial.html). To test this out and not destroy your current GitHub Page with the labs, first create a new repo (e.g. MyWebSite). Remember to enable the Git Page under Settings and change the folder from `root` to `docs`.  Create a local repository. Then create your new website inside the local repository. Here is an example of my [WebSiteTest](https://jeffreyblanchard.github.io/WebSiteTest/)
+
+### Exercises
+
+For students in 697, make a new website. In the `About` tab add whatever information about yourself you want on the web (e.g. Research interests). Add a tab `EvoGenLab`. You can link to your other repository Git Page.  For students in 597 use one of the `prettydoc` themes for Lab 12 and for extra credit you can create your web site.

@@ -1,7 +1,9 @@
 ---
+title: "Evolutionary Genomics & Bionformatics"
 output:
-  html_document: default
-  pdf_document: default
+  prettydoc::html_pretty:
+    theme: cayman
+    highlight: github
 editor_options: 
   chunk_output_type: console
 ---
@@ -31,4 +33,4 @@ This is a rendering of hmtl files from the course repository  (https://github.co
 * Lab 11 : [Microbiome Analysis using dada2 and phyloseq](EvoGeno_Lab11_dada2.html)
 * Lab 11x : [Microbiome Analysis using phyloseq](EvoGeno_Lab11x_phyloseq.html)
 * Lab 12 : [Network Analysis using Cytoscape and RCy3](EvoGeno_Lab12_cytoscape.html)
-
+* Lab 13 : [Sprucing up your Rmarkdown and GitHub Page](EvoGeno_Lab13_pretty.html)
