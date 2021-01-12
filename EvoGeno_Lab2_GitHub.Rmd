@@ -260,12 +260,13 @@ There's a lot we haven't covered in this brief tutorial.  There are some good lo
 
 You can automatically generate citations and a bibliography in a number of styles. In order to use this feature, you will need to specify a bibliography file using the bibliography metadata field in a YAML metadata section. For example:
 
+```
 ---
 title: "Sample Document"
 output: html_document
 bibliography: bibliography.bib
 ---
-
+```
 The bibliography may have any of these formats:
 
 Format    |File extension
