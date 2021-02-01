@@ -24,6 +24,35 @@ See the [MGHPCC login](https://www.umassrc.org/wiki/index.php/Connecting_to_the_
 
 To transfer data see instructions on [MGHPCC data transfer](https://www.umassrc.org/wiki/index.php/Transferring_Data). Most of what we do in this class can be run using interactive mode.  
 
+### Logging into MGHPCC and your directory structure
+
+You should have both an individual and lab workspace. The lab works space is in 
+
+/project/uma_[NAME_OF_PI] e.g. 
+
+```
+cd /project/uma_jeffrey_blanchard
+```
+
+The data for shared projects should be kept in our group project folder so that it is not taking up memory by sitting in multiple places in individual accounts
+
+
+### Running applications (submitting jobs)
+
+
+
+### Singularity
+
+[Singularity User Guide](https://singularity.lbl.gov/archive/docs/v2-3/user-guide)
+https://singularity.lbl.gov/archive/docs/v2-3/create-image
+
+"The goal of Singularity is to support existing and traditional HPC resources as easily as installing a single package onto the host operating system. Some configuration maybe required via a single configuration file, but the defaults are tuned to be generally applicable for shared environments."
+
+
+
+
+
+
 ### Other options
 
 These others options can work as well depending on your needs and 
